@@ -10,8 +10,9 @@ Blackjack
 I do not think this game needs an explanation but if you don't know the game
 https://en.wikipedia.org/wiki/Blackjack covers the basics.
 
-The simulation takes into account the varied values of Ace. It does not split.
-It kind plays like an amateur who knows the basics and has an idea of the game.
+The simulation takes into account the varied values of Ace ( 1 or 11). It does
+not split. It kind plays like an amateur who knows the basics and has an idea of
+ the game.
 
 The dealer holds at 17 or above. The player only holds at 20 or above (ie Blackjack)
 
@@ -28,4 +29,4 @@ Lose: 0.551
 Draw: 0.036
 
 in general.
-Once again reinstating the fact that if you do not know how to gamble DONT.
+Once again reinstating the fact that if you do not know how to gamble, DONT.
