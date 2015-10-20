@@ -1,3 +1,5 @@
+#!/usr/bin/env python2.7
+
 from __future__ import division
 import random
 from sys import exit
@@ -39,7 +41,7 @@ def clash_checker(Q1,Q2):
 	if Q1[0]-Q1[1]==Q2[0]-Q2[1] or Q1[0]+Q1[1]== Q2[0]+Q2[1]:
 		#print "Diagonal" , Q1, Q2
 		the_clash=True
-		return 0 
+		return 0
 	elif Q1[1]==Q2[1]:
 		the_clash=True
 		return 0
@@ -65,7 +67,7 @@ def find_cumulative_fitness(population):
 		cf+=i[1]
 
 
-##find_probability uses the fitness of each item and finds each of their probability 
+##find_probability uses the fitness of each item and finds each of their probability
 def find_probability(population):
 	global population_prob
 	population_prob=[]
@@ -87,7 +89,7 @@ def fitness(p):
 		else:
 			the_clash=False
 	return f
-			
+
 
 
 def mutate_pos_swap(p):
@@ -132,7 +134,7 @@ def crossover(p1,p2):
 		children.append([child,fit])
 	if fit == solved:
 		print "------------------------------------"
-		print "Solution:",child 
+		print "Solution:",child
 		print "------------------------------------"
 		exit()
 	# children.append([p2,fit2])
@@ -166,5 +168,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-

@@ -1,3 +1,5 @@
+#!/usr/bin/env python2.7
+
 from __future__ import division
 import random
 from sys import exit
@@ -49,7 +51,7 @@ def clash_checker(Q1,Q2):
 	if Q1[0]-Q1[1]==Q2[0]-Q2[1] or Q1[0]+Q1[1]== Q2[0]+Q2[1]:
 		#print "Diagonal" , Q1, Q2
 		the_clash=True
-		return 0 
+		return 0
 	elif Q1[1]==Q2[1]:
 		the_clash=True
 		return 0
@@ -75,7 +77,7 @@ def fitness(p):
 		else:
 			the_clash=False
 	return f
-			
+
 def acceptance_probability(fit_new,fit,T):
 	return math.e**((fit_new-fit)/T)
 
@@ -93,7 +95,7 @@ def main():
 		for i in range(0,iterations):
 			c_new=neighbor(c)
 			# fit_new=fitness(c_new)
-			
+
 			if fitness(c_new) > fitness(c):
 				c=c_new
 
