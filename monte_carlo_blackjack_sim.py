@@ -34,7 +34,7 @@ class blackjackPlayer():
         self.__points+=temp[2]
         if temp[0] == 'Ace' and self.__points <= 11 :
             self.noAces+=1
-            print "The ACE OF SPADES!!"
+            # print "The ACE OF SPADES!!"
             self.__points+=10
 
     def score(self):
