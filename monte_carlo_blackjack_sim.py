@@ -73,15 +73,18 @@ def unitSimulation():
         if dealer.shouldIHitThat():
             dealer.update(cards.hit())
 
-        if dealer.score() == 21:
-            print "Dealer:", dealer.score()
-            print "Player:", player.score()
-            print "Dealer Blackjack"
-            print "Dealer:", dealer.show_cards()
-            print "Player:", player.show_cards()
-            return (0,1,0)
+        if player.shouldIHitThat():
+            player.update(cards.hit())
 
-        elif dealer.score() > 21:
+        # if dealer.score() == 21:
+        #     print "Dealer:", dealer.score()
+        #     print "Player:", player.score()
+        #     print "Dealer Blackjack"
+        #     print "Dealer:", dealer.show_cards()
+        #     print "Player:", player.show_cards()
+        #     return (0,1,0)
+
+        if dealer.score() > 21:
             recalcScore=dealer.recalc_score()
             if recalcScore == 1:
                 if dealer.score() > 21:
@@ -99,17 +102,6 @@ def unitSimulation():
                 print "Player:", player.show_cards()
                 print "Dealer:", dealer.show_cards()
                 return (1,0,0)
-
-        if player.shouldIHitThat():
-            player.update(cards.hit())
-
-        if player.score() == 21:
-            print "Dealer:", dealer.score()
-            print "Player:", player.score()
-            print "Player Blackjack!"
-            print "Player:", player.show_cards()
-            print "Dealer:", dealer.show_cards()
-            return (1,0,0)
 
         elif player.score() > 21:
             recalcScore=player.recalc_score()
@@ -170,9 +162,9 @@ def main():
     for i in range(0,number_of_simulations):
         score =tuple(map(operator.add,score, unitSimulation()))
     print score
-    print "Win:", score[0]/number_of_simulations
-    print "Lose:", score[1]/number_of_simulations
-    print "Draw:", score[2]/number_of_simulations
+    print "Win%:", (score[0]/number_of_simulations)*100
+    print "Lose%:", (score[1]/number_of_simulations)*100
+    print "Draw%:", (score[2]/number_of_simulations)*100
 
 if __name__ == "__main__":
     main()
