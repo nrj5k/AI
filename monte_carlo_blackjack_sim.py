@@ -21,29 +21,34 @@ class deckOfCards():
 class blackjackPlayer():
     __points=0
     __hitlimit=int()
+
     def __init__(self,hitlim=20):
         self.__hitlimit=hitlim
         self.__cards=[]
         self.__debug=[]
         self.noAces=0
+
     def update(self,temp):
         self.__debug.append(temp)
         self.__cards.append((temp[0],temp[1]))
         self.__points+=temp[2]
-        if temp[0] == 'Ace' and self.__points <= 10 :
+        if temp[0] == 'Ace' and self.__points <= 11 :
             self.noAces+=1
-            # print "The ACE OF SPADES!!"
+            print "The ACE OF SPADES!!"
             self.__points+=10
 
     def score(self):
         return self.__points
+
     def shouldIHitThat(self):
         if self.__points >= self.__hitlimit:
             return False
         else:
             return True
+
     def show_cards(self):
         return self.__cards
+
     def recalc_score(self):
         if self.noAces >= 1:
             while self.noAces>0 and self.score() >21:
