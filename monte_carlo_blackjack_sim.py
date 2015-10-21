@@ -77,9 +77,6 @@ def unitSimulation():
         if dealer.shouldIHitThat():
             dealer.update(cards.hit())
 
-        if player.shouldIHitThat():
-            player.update(cards.hit())
-
         if dealer.score() > 21:
             recalcScore=dealer.recalc_score()
             if recalcScore == 1:
@@ -99,7 +96,10 @@ def unitSimulation():
                 print "Dealer:", dealer.show_cards()
                 return (1,0,0)
 
-        elif player.score() > 21:
+        if player.shouldIHitThat():
+            player.update(cards.hit())
+
+        if player.score() > 21:
             recalcScore=player.recalc_score()
 
             if recalcScore == 1:
