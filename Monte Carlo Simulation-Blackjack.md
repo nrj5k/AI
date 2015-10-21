@@ -24,9 +24,9 @@ losing and drawing the game.
 
 They are usually around
 
-Win: 0.413
-Lose: 0.551
-Draw: 0.036
+Win%: 31.8
+Lose%: 64.0
+Draw%: 4.2
 
 in general.
 Once again reinstating the fact that if you do not know how to gamble, DONT.
