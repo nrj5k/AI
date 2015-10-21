@@ -64,46 +64,39 @@ def unitSimulation():
     player=blackjackPlayer(hitlim=20)
     cards=deckOfCards()
 
-    dealer.update(cards.hit())
+    player.update(cards.hit())
     dealer.update(cards.hit())
 
     player.update(cards.hit())
-    player.update(cards.hit())
+    dealer.update(cards.hit())
 
     while (True):
         print "Dealer:", dealer.score()
         print "Player:", player.score()
 
-        if dealer.shouldIHitThat():
-            dealer.update(cards.hit())
+        if player.score() == 21 :
+            print "Player Blackjack!"
+            return (1,0,0)
+        elif dealer.score() == 21:
+            print "Dealer Blackjack"
+            return (0,1,0)
 
-        if dealer.score() > 21:
-            recalcScore=dealer.recalc_score()
-            if recalcScore == 1:
-                if dealer.score() > 21:
-                    print "Dealer:", dealer.score()
-                    print "Player:", player.score()
-                    print "Dealer Busted"
-                    print "Player:", player.show_cards()
-                    print "Dealer:", dealer.show_cards()
-                    return (1,0,0)
-
-            elif recalcScore == 0 :
-                print "Dealer:", dealer.score()
-                print "Player:", player.score()
-                print "Dealer Busted"
-                print "Player:", player.show_cards()
-                print "Dealer:", dealer.show_cards()
-                return (1,0,0)
-
-        if player.shouldIHitThat():
+        while (player.shouldIHitThat()):
             player.update(cards.hit())
 
-        if player.score() > 21:
-            recalcScore=player.recalc_score()
+            if player.score() > 21:
+                recalcScore=player.recalc_score()
 
-            if recalcScore == 1:
-                if player.score() > 21:
+                if recalcScore == 1:
+                    if player.score() > 21:
+                        print "Dealer:", dealer.score()
+                        print "Player:", player.score()
+                        print "Player Busted"
+                        print "Player:", player.show_cards()
+                        print "Dealer:", dealer.show_cards()
+                        return (0,1,0)
+
+                elif recalcScore == 0 :
                     print "Dealer:", dealer.score()
                     print "Player:", player.score()
                     print "Player Busted"
@@ -111,15 +104,29 @@ def unitSimulation():
                     print "Dealer:", dealer.show_cards()
                     return (0,1,0)
 
-            elif recalcScore == 0 :
-                print "Dealer:", dealer.score()
-                print "Player:", player.score()
-                print "Player Busted"
-                print "Player:", player.show_cards()
-                print "Dealer:", dealer.show_cards()
-                return (0,1,0)
+        while (dealer.shouldIHitThat()):
+            dealer.update(cards.hit())
 
-        elif player.shouldIHitThat() == False and dealer.shouldIHitThat() == False and player.score() == dealer.score():
+            if dealer.score() > 21:
+                recalcScore=dealer.recalc_score()
+                if recalcScore == 1:
+                    if dealer.score() > 21:
+                        print "Dealer:", dealer.score()
+                        print "Player:", player.score()
+                        print "Dealer Busted"
+                        print "Player:", player.show_cards()
+                        print "Dealer:", dealer.show_cards()
+                        return (1,0,0)
+
+                elif recalcScore == 0 :
+                    print "Dealer:", dealer.score()
+                    print "Player:", player.score()
+                    print "Dealer Busted"
+                    print "Player:", player.show_cards()
+                    print "Dealer:", dealer.show_cards()
+                    return (1,0,0)
+
+        if player.shouldIHitThat() == False and dealer.shouldIHitThat() == False and player.score() == dealer.score():
             print "Dealer:", dealer.score()
             print "Player:", player.score()
             print "Draw!"
