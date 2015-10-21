@@ -59,11 +59,15 @@ class blackjackPlayer():
             return 0
 
 def unitSimulation():
+
     dealer=blackjackPlayer(hitlim=17)
     player=blackjackPlayer(hitlim=20)
     cards=deckOfCards()
 
     dealer.update(cards.hit())
+    dealer.update(cards.hit())
+
+    player.update(cards.hit())
     player.update(cards.hit())
 
     while (True):
@@ -75,14 +79,6 @@ def unitSimulation():
 
         if player.shouldIHitThat():
             player.update(cards.hit())
-
-        # if dealer.score() == 21:
-        #     print "Dealer:", dealer.score()
-        #     print "Player:", player.score()
-        #     print "Dealer Blackjack"
-        #     print "Dealer:", dealer.show_cards()
-        #     print "Player:", player.show_cards()
-        #     return (0,1,0)
 
         if dealer.score() > 21:
             recalcScore=dealer.recalc_score()
@@ -122,15 +118,6 @@ def unitSimulation():
                 print "Player:", player.show_cards()
                 print "Dealer:", dealer.show_cards()
                 return (0,1,0)
-
-
-        if dealer.shouldIHitThat() == False  and dealer.score < player.score():
-            print "Dealer:", dealer.score()
-            print "Player:", player.score()
-            print "Player wins"
-            print "Player:", player.show_cards()
-            print "Dealer:", dealer.show_cards()
-            return (1,0,0)
 
         elif player.shouldIHitThat() == False and dealer.shouldIHitThat() == False and player.score() == dealer.score():
             print "Dealer:", dealer.score()
