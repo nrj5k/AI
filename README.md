@@ -38,9 +38,11 @@ So the N Queens problem was solved using 2 search algorithms.
 ## The Monte Carlo Simulation
 The Monte Carlo Simulation is a mathematical technique that allows quantitative analysis for decision making. In simple terms, to find a possible solution, you find the possible outcomes for a subset of the problem and that should give you a fair idea what the possible outcome can be.
 
-Blackjack
+#### Blackjack
 
 I do not think this game needs an explanation but if you don't know the game [https://en.wikipedia.org/wiki/Blackjack](https://en.wikipedia.org/wiki/Blackjack) covers the basics.
+
+#### The Implementation
 
 The simulation takes into account the varied values of Ace ( 1 or 11). It does not split. It kind plays like an amateur who knows the basics and has an idea of  the game.
 
@@ -55,4 +57,4 @@ They are usually around
 Win%: 31.8 Lose%: 64.0 Draw%: 4.2
 
 in general. Once again reinstating the fact that if you do not know how to gamble. 
-### DONT!.
+####### DONT!.
