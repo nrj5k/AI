@@ -19,7 +19,7 @@ So the N Queens problem was solved using 2 search algorithms. 1. Genetic Algorit
 
   This method eventually finds the answer but the time it takes increases once the value is more than 10. I have got the answers for N=19 and all but not always. You gotta get lucky.
 
--Simulated Annealing
+- Simulated Annealing
 
 Simulated Annealing is a search technique inspired by metallurgy, which involves heating and controlled cooling of a material. Now each step involves one a move, one move ie. one move of the Queen, or swapping its position with another Queen.
 
