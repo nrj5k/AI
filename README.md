@@ -1,5 +1,7 @@
-# AI
-Stuff I implemented as part of my AI course and a little more
+Artificial intelligence
+=======================
+
+These are some programs/scripts I have implemented as part of my AI course and more.
 1. N Queens Problem, Genetic Algorithms and Simulated Annealing
 2. Monte Carlo Simulation for Blackjack
 
@@ -9,7 +11,7 @@ Since I have 2 programs that implement the N Queens problem. I shall first elabo
 The N Queens problem is one where you have a chess board of NxN dimensions and your aim is to put N Queens such that none of them are a "threat" to each other. N is 4 and above.
 
 So the N Queens problem was solved using 2 search algorithms. 1. Genetic Algorithms 2. Simulated Annealing
-- Genetic Algorithms
+1. Genetic Algorithms
 
   This method of solution finding similar to Evolution.
   - You have a randomly generated set of solutions, these start as your initial base, then you compare their fitness. Here for the N Queens Problem, the fitness function rewards a point when a Queen does not "threaten" another Queen. So we check the first Queen with the rest, and so on. Now the last Queen does not really threaten anyone, as we are considering threats from the Left side of the board to the Right, and a "threat" is a bidirectional "effect". So the last Queen is ignored and the maximum fitness it can achieve is always N-1.
@@ -19,15 +21,13 @@ So the N Queens problem was solved using 2 search algorithms. 1. Genetic Algorit
 
   This method eventually finds the answer but the time it takes increases once the value is more than 10. I have got the answers for N=19 and all but not always. You gotta get lucky.
 
-- Simulated Annealing
+2. Simulated Annealing
 
-Simulated Annealing is a search technique inspired by metallurgy, which involves heating and controlled cooling of a material. Now each step involves one a move, one move ie. one move of the Queen, or swapping its position with another Queen.
+  Simulated Annealing is a search technique inspired by metallurgy, which involves heating and controlled cooling of a material. Now each step involves one a move, one move ie. one move of the Queen, or swapping its position with another Queen.
 
-It uses a fitness function similar to the one used in GA solution.
+  It uses a fitness function similar to the one used in GA solution. It starts off with a randomly generated solution and then makes a move.
 
-It starts off with a randomly generated solution and then makes a move.
-
-The does not discard a a less fit solution. The probability of it picking a less fit solution depends on the temperature and the change in energy. In general, the higher the temperature the higher the chances of a less fit solution being accepted. Check out [http://what-when-how.com/artificial-intelligence/a-comparison-of-cooling-schedules-for-simulated-annealing-artificial-intelligence/](http://what-when-how.com/artificial-intelligence/a-comparison-of-cooling-schedules-for-simulated-annealing-artificial-intelligence/) for some cool functions for the cooling function.
+  This method does not discard a a less fit solution. The probability of it picking a less fit solution depends on the temperature and the change in energy. In general, the higher the temperature the higher the chances of a less fit solution being accepted. Check out [http://what-when-how.com/artificial-intelligence/a-comparison-of-cooling-schedules-for-simulated-annealing-artificial-intelligence/](http://what-when-how.com/artificial-intelligence/a-comparison-of-cooling-schedules-for-simulated-annealing-artificial-intelligence/) for some cool functions for the cooling function.
 
 # The Monte Carlo Simulation
 The Monte Carlo Simulation is a mathematical technique that allows quantitative analysis for decision making. In simple terms, to find a possible solution, you find the possible outcomes for a subset of the problem and that should give you a fair idea what the possible outcome can be.
