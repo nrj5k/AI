@@ -59,4 +59,4 @@ The odds are usually around
 * Lose%: 64.0 
 * Draw%: 4.2
 
-in general. Once again reinstating the fact that if you do not know how to gamble. *DONT!*
+In general. Once again reinstating the fact that if you do not know how to gamble. *DONT!*
