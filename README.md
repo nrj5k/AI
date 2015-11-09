@@ -2,6 +2,7 @@ Artificial intelligence
 =======================
 
 These are some programs/scripts I have implemented as part of my AI course and more.
+
 1. N Queens Problem, Genetic Algorithms and Simulated Annealing
 2. Monte Carlo Simulation for Blackjack
 
