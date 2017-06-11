@@ -16,7 +16,7 @@ So the N Queens problem was solved using 2 search algorithms.
 1. Genetic Algorithms 
 2. Simulated Annealing
 
-###1. Genetic Algorithms
+### 1. Genetic Algorithms
 
   This method of solution finding similar to Evolution.
   - You have a randomly generated set of solutions, these start as your initial base, then you compare their fitness. Here for the N Queens Problem, the fitness function rewards a point when a Queen does not "threaten" another Queen. So we check the first Queen with the rest, and so on. Now the last Queen does not really threaten anyone, as we are considering threats from the Left side of the board to the Right, and a "threat" is a bidirectional "effect". So the last Queen is ignored and the maximum fitness it can achieve is always N-1.
@@ -29,7 +29,7 @@ So the N Queens problem was solved using 2 search algorithms.
 
   This method eventually finds the answer but the time it takes increases once the value is more than 10. I have got the answers for N=19 and all but not always. You gotta get lucky.
 
-###2. Simulated Annealing
+### 2. Simulated Annealing
 
 *  Simulated Annealing is a search technique inspired by metallurgy, which involves heating and controlled cooling of a material. Now each step involves one a move, one move ie. one move of the Queen, or swapping its position with another Queen.
 
